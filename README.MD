@@ -30,6 +30,6 @@ This is important because otherwise, you'll have some classloading issues.
 Glowroot does not support hot deploy. JVM has to restart for plugins to
 be applied.
 
-## Warning - weight of treace entries
+## Warning - weight of trace entries
 
 Configuration allows you to capture individual client extension transactions with optional full payloads. This can lead to expensive processing and disk usage.
