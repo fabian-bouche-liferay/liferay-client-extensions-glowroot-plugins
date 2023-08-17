@@ -1,0 +1,36 @@
+{
+	"name": "Liferay Client Extensions Plugin",
+	"id": "liferay-client-extensions-plugin",
+	"properties": [
+		{
+			"name": "captureProxyObjectRequestsAsOuterTransaction",
+			"type": "boolean",
+			"label": "Capture Proxy Object Requests as an outer transaction",
+			"checkboxLabel": "Capture Proxy Object Requests as an outer transaction"
+		},
+		{
+			"name": "captureProxyObjectRequestsDetails",
+			"type": "boolean",
+			"label": "Capture Proxy Object Details within an outer transaction",
+			"checkboxLabel": "Capture Proxy Object Details within an outer transaction"
+		},
+		{
+			"name": "captureObjectActionRequestsAsOuterTransaction",
+			"type": "boolean",
+			"label": "Capture Object Action Requests as an outer transaction",
+			"checkboxLabel": "Capture Object Action Requests as an outer transaction"
+		},
+		{
+			"name": "captureObjectActionRequestsPayload",
+			"type": "boolean",
+			"label": "Capture Object Action Payload within an outer transaction",
+			"checkboxLabel": "Capture Object Action Payload within an outer transaction"
+		}				
+	],
+	"aspects": [
+		"com.liferay.glowroot.plugins.client.extensions.FunctionObjectEntryManagerAspect",
+		"com.liferay.glowroot.plugins.client.extensions.FunctionObjectActionExecutorAspect",
+		"com.liferay.glowroot.plugins.client.extensions.PortalCatapultAspect"
+	],
+	"collocate": true
+}
