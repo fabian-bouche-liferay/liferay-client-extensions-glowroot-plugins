@@ -33,3 +33,9 @@ be applied.
 ## Warning - weight of trace entries
 
 Configuration allows you to capture individual client extension transactions with optional full payloads. This can lead to expensive processing and disk usage.
+
+## TODO
+
+My plugin has to read some JSON data and it's not easy to include a third party library as I would have to add its packages to the `bootdelegation` property which would
+import all the packages into all the OSGI bundles' classloader. This could have side effects.
+I'm thinking about shading maybe the gson library so that it lives under a custom package name to avoid side effects.
