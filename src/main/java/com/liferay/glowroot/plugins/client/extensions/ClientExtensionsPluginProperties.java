@@ -14,7 +14,10 @@ public class ClientExtensionsPluginProperties {
 	private static boolean captureObjectActionRequestsAsOuterTransaction;
 	private static boolean captureObjectActionRequestsPayload;
 	
-    static {
+	private static boolean captureWorkflowActionRequestsAsOuterTransaction;
+	private static boolean captureWorkflowActionContext;
+	
+	static {
         configService.registerConfigListener(new ClientExtensionsPluginConfigListener());
     }
     
@@ -34,6 +37,14 @@ public class ClientExtensionsPluginProperties {
         return captureObjectActionRequestsPayload;
     }
     
+	public static boolean captureWorkflowActionRequestsAsOuterTransaction() {
+		return captureWorkflowActionRequestsAsOuterTransaction;
+	}
+
+	public static boolean captureWorkflowActionContext() {
+		return captureWorkflowActionContext;
+	}	
+	
     private static class ClientExtensionsPluginConfigListener implements ConfigListener {
 
         @Override
@@ -54,8 +65,14 @@ public class ClientExtensionsPluginProperties {
 
         	captureObjectActionRequestsPayload =
                     configService.getBooleanProperty("captureObjectActionRequestsPayload").value();
+        
+        	captureWorkflowActionRequestsAsOuterTransaction =
+                    configService.getBooleanProperty("captureWorkflowActionRequestsAsOuterTransaction").value();
         	
+        	captureWorkflowActionContext =
+                    configService.getBooleanProperty("captureWorkflowActionContext").value();
         }
  
     }
+
 }

@@ -25,11 +25,24 @@
 			"type": "boolean",
 			"label": "Capture Object Action Payload within an outer transaction",
 			"checkboxLabel": "Capture Object Action Payload within an outer transaction"
+		},
+		{
+			"name": "captureWorkflowActionRequestsAsOuterTransaction",
+			"type": "boolean",
+			"label": "Capture Workflow Action Requests as an outer transaction",
+			"checkboxLabel": "Capture Workflow Action Requests as an outer transaction"
+		},
+		{
+			"name": "captureWorkflowActionContext",
+			"type": "boolean",
+			"label": "Capture Workflow Action Execution Context within an outer transaction",
+			"checkboxLabel": "Capture Workflow Action Execution Context within an outer transaction"
 		}				
 	],
 	"aspects": [
 		"com.liferay.glowroot.plugins.client.extensions.FunctionObjectEntryManagerAspect",
 		"com.liferay.glowroot.plugins.client.extensions.FunctionObjectActionExecutorAspect",
+		"com.liferay.glowroot.plugins.client.extensions.FunctionWorkflowActionExecutorAspect",
 		"com.liferay.glowroot.plugins.client.extensions.PortalCatapultAspect"
 	],
 	"collocate": true
